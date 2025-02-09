@@ -1,0 +1,578 @@
+:root{
+    --green:green;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,0,.1);
+    --border: 2rem solid rgba(0,0,0.1);
+    --outLine: .1rem solid rgba(0,0,0.1);
+}
+
+*{
+font-family: 'Italianno', cursive;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+outline: none;
+border: none;
+text-decoration: none;
+text-transform: capitalize;
+transition: all .2s linear;
+}
+html{
+    font-size: 65.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+body{
+    background: #eee;
+    background-image: url('../image/bg.jpg');
+}
+/* Code For Banner */
+section{
+  padding: 2rem 9%;
+
+}
+.btn{
+    border: .2rem solid var(--black);
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 4rem;
+    font-size: 2.1rem;
+    border-radius: .5rem;
+    color: var(--black);
+    background: none;
+}
+/* Making Feature heading common for all so that other can also use this */
+.heading{
+    text-align: center;
+    padding: 2rem orem;
+      padding-bottom: 3rem;
+      font-size: 3.8rem;
+      color: var(--black);
+}
+.heading span{
+    font-size: 3.8rem;
+    background:  #c82c8d;
+    color: #fff;
+    display: inline-block;
+    padding: .6rem 3rem;
+    clip-path: polygon(100% 0,93% 50%,100% 99%, 0% 100%,7% 50%,0% 0%);
+}
+.btn:hover{
+    background: var(--green);
+    color: white;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;  
+}
+.header .section1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+}
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+.header .navbar{
+    font-size: 3.5rem;
+}
+.header .logo i{
+    color:var(--green);
+}
+.header .navbar a{
+ font-size: 1.7rem;
+ margin: 0 1rem;
+ color: var(--black);
+ text-decoration: none;
+
+}
+.header .navbar a:hover{
+    color: #c82c8d;
+   }
+.header .icons div{
+ height: 4.5rem;
+ width: 4.5rem;
+ line-height: 4.5rem;
+ border-radius: .5rem;
+ background: #eee;
+ color: var(--black);
+ font-size: 2rem;
+ margin: .3rem;
+ text-align: center;
+ cursor: pointer;
+}
+.header .icons div:hover{
+    background-color:  #c82c8d;
+    color: white;
+}
+
+#menu-btn{
+    display: none;
+}
+.header .navbar.active{
+    right: 2rem;
+    transition: .4s linear;
+}
+.header .search-form{
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    width: 50rem;
+    height: 5rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+.header .search-form.active{
+    right: 2rem;
+  transition: .4s linear;
+}
+.header .search-form input{
+    width: 100%;
+    height: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.8rem;
+    color: var(--black);
+    padding: 0 1.5rem;
+}
+.header .search-form label{
+    font-size: 2.2rem;
+    padding-right: 1.9rem;
+    color: var(--black);
+    cursor: pointer;
+}
+.header .search-form label:hover{
+    /* color: var(--green); */
+    color: #c82c8d;
+
+}
+/* 
+.header .shopping-cart{
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 35rem;
+    background:#fff;
+}
+.header .shopping-cart.active{
+  right: 2rem;
+  transition: .4s linear;
+}
+.header .shopping-cart .box{
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+ position: relative;
+ margin: 1rem 0rem;
+}
+.header .shopping-cart .box img{
+    height: 10rem;
+}
+.header .shopping-cart .box .fa-trash{
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    cursor: pointer;
+    color: var(--light-color);
+    transform: translateY(-50%);
+}
+.header .shopping-cart .box .fa-trash:hover{
+    color: var(--green);
+}
+.header .shopping-cart .box .content h3{
+   color: var(--black);
+   font-size: 2.1rem;
+   padding-bottom: 1rem;
+} 
+.header .shopping-cart .box .content span{
+    color: var(--light-color);
+    font-size: 1.9rem;
+ } 
+ .header .shopping-cart .box .content .Quantity{
+    padding-left: 1rem;
+ }
+ .header .shopping-cart .total{
+    font-size: 2.5rem;
+    padding: 1rem 0rem;
+    text-align: center;
+    color: var(--black);
+ }
+ .header .shopping-cart .btn{
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+ } */
+.header .login-form{
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    border-radius: .5rem;
+    background: #fff;
+    text-align: center;
+    width: 35rem;
+ }
+ .header .login-form.active{
+    right: 2rem;
+    transition: .4s linear;
+ }
+ .header .login-form h3{
+    font-size: 2.9rem;
+    text-transform: uppercase;
+    color: var(--black);
+ }
+ .header .login-form .box{
+    width: 100%;
+    margin: .7rem 0;
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.9rem;
+    color: var(--black);
+    text-transform:none;
+ }
+ .header .login-form p{
+    font-size: 1.6rem;
+    padding: .5rem 0;
+    color: var(--light-color);
+ }
+ .header .login-form p a{
+    font-size: 1.7rem;
+    padding: .5rem 0;
+    color: var(--green);
+    text-decoration: underline;
+ }
+/* Home Part css Which is inside Section Of Main Banner */
+.home{
+    border: 0px solid;
+    display: flex;
+    justify-content: center;
+    background: url(../image/bgCover.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+  padding-top: 17rem;  
+  padding-bottom: 10rem;
+  top: 14rem;
+  height: 64rem;
+}
+
+ .home .content {
+    text-align: center;
+    width: 60rem;
+    box-shadow: var(--box-shadow); 
+}
+.home .content h3{
+    color: wheat;
+    font-size: 6rem;
+    padding-bottom: 2rem;
+}
+.home .content h3 span{
+    color: var(--green);
+    font-size: 6rem;
+}
+.home .content p{
+    color: wheat;
+    font-size: 3.2rem;
+    padding-bottom: .5rem;
+    line-height: 3.4rem;
+ } 
+ /* code For features */
+ .features .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit,minmax(32rem,1fr));
+   gap: 1rem;
+   /* width: 15rem;
+   height: 20rem; */
+ }
+ .features .box-container .box img{
+    /* margin-left: 3rem; */
+    margin: 1rem 0;
+    height: 15rem;
+    width: 20rem;
+ }
+ .features .box-container .box{
+    padding: 3rem 2rem;
+    background: #fff;
+   outline: var(--outLine);
+   outline-offset: -1rem;
+   text-align: center;
+   box-shadow: var(--box-shadow);
+ }
+ .features .box-container .box:hover{
+    /* box-shadow:   #c82c8d; */
+   box-shadow: 1px 1px 10px 4px   #c82c8d ;
+ }
+ .features .box-container .box h3{
+    font-size: 2.9rem;
+    line-height: 1.8;
+    color: var(--black);
+ }
+ .features .box-container .box p{
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--light-color);
+    padding: 1rem 0;
+ }
+ /* code For features */
+  /* code For products */
+.products .product-slider{
+    padding: 1rem;
+}
+/* .product-slider .swiper-slide img {
+     width: 20px;
+    height: 20px; 
+  } */
+.products .product-slider .box{
+  background: #fff;
+  border-radius: .5rem;
+  text-align: center;
+  padding: 3rem 2rem;
+  outline-offset: -1rem;
+  outline: var(--outLine);
+  box-shadow: var(--box-shadow);
+  transition: .2s linear;
+}
+.products .product-slider .box:hover{
+    box-shadow: 1px 1px 10px 4px   #c82c8d;
+}
+.products .swiper .swiper-wrapper .swiper-slide.box img {
+    height: 15rem;
+    width: 20rem;
+    overflow: hidden;
+}
+.products .product-slider .box h1{
+    font-size: 2.5rem;
+    color: var(--black);
+}
+.products .product-slider .box .price{
+    font-size: 2rem;
+    color: var(--light-color);
+    padding: .5rem 0;
+}
+.products .product-slider .box  .stars i{
+    font-size: 1.7rem;
+    color: orange;
+    padding: .4rem 0;
+}
+  /* code For products */
+  /* Product Category */
+  .cateogries  .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+     gap: 1rem; 
+  }
+     .cateogries .box-container .box img {
+        margin: 1rem 0;
+        height: 15rem;
+        width: 20rem;
+         }
+         .cateogries .box-container .box{
+            padding: 3rem 2rem;
+            background: #fff;
+           outline: var(--outLine);
+           outline-offset: -1rem;
+           text-align: center;
+           box-shadow: var(--box-shadow);
+         }
+         .cateogries .box-container .box:hover{
+            box-shadow: 1px 1px 10px 4px   #e51195;
+          }
+          .cateogries .box-container .box h3{
+             font-size: 2.9rem;
+             line-height: 1.8;
+             color: var(--black);
+          }
+          .cateogries .box-container .box p{
+             font-size: 1.5rem;
+             line-height: 1;
+             color: var(--light-color);
+             padding: 1rem 0;
+          }
+  /* Product Category */ 
+    /* Customers Review */ 
+  .review .review-slider{
+    padding: 1rem;
+  }
+  .review .review-slider .box{
+    background: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    outline-offset: -1rem;
+    outline: var(--outLine);
+    box-shadow: var(--box-shadow);
+    transition: .2s linear;
+  }
+  .review .review-slider .box:hover{
+    box-shadow: 1px 1px 10px 4px   #c82c8d;
+  }
+  .review .review-slider .box img{
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+  }
+  .review .review-slider .box p{
+    padding: 1rem 0;
+    line-height: 1.8;
+    color: var(--light-color);
+    font-size: 1.5rem;
+  }
+  .review .review-slider .box h3{
+    padding-bottom: .5rem;
+    color: var(--black);
+    font-size: 2.2rem;
+  }
+  .review .review-slider .box .stars i{
+    color:orange;
+    font-size: 1.7rem;
+  }
+      /* Customers Review */ 
+/* Footer Css */
+.footer{
+    background: #fff;
+}
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(26rem,1fr));
+    gap:1.5rem;
+}
+.footer .box-container .box a{
+    display: block;
+   font-size: 2.5rem;
+   line-height: 1.8rem;
+   color: var(--green);
+   padding: 1rem 1rem;
+} 
+
+.footer .box-container .box p{
+    
+    font-size: 1.7rem;
+    line-height: 1.8;
+    color: var(--light-color);
+    padding-top: 1.5rem ;
+    top: 17rem;
+}
+.footer .box-container .box p:hover{
+   color: var(--green);
+}
+.footer .box-container .box i{
+    color: var(--black);
+}
+.footer .box-container .box i:hover{
+    color: var(--green);
+}
+.footer .box-container .box i a{
+    color: var(--black);
+    padding-right: .5rem;
+}
+.footer .box-container .box a:hover{
+    color: var(--green);
+    padding-right: 2rem;
+}
+
+.footer .box-container .box h3{
+    color: var(--black);
+    font-size: 3rem;
+    padding-bottom: 3.5rem;
+}
+
+.footer .box-container .box h3:hover{
+    color: var(--green);
+}
+.footer .box-container .box .share a{
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    color: var(--black);
+    margin-left: .3rem;
+}
+.footer .credit{
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    padding-top: 2.5rem;
+    color: var(--black);
+    font-size: 2rem;
+    border-top: var(--border);
+}
+.footer .credit span{
+    cursor: pointer;
+    color: var(--green);
+}
+
+
+
+
+/* Footer Css */
+ /* Media Queries */
+ @media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 2rem;
+    }
+    section{
+        padding: 2rem;
+    }
+ }
+ @media (max-width:768px){
+    .home{
+        height: 83rem;
+    }
+    #menu-btn{
+        display:inline-block;
+    }
+    .header .search-form{
+        width: 90%;
+    }
+    .header .navbar{
+        position: absolute;
+        top: 110%;
+        right: -110%;
+        width: 30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: #fff;
+    }
+    
+    .header .navbar a{
+        font-size: 2.1rem;
+        margin: 2rem 2.5rem;
+        display: block;
+    }
+ }
+ @media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .heading{
+        font-size: 2.6rem;
+    }
+    /* .heading span{
+        font-size: 2.6rem;
+    } */
+ }
