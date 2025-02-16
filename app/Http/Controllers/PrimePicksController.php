@@ -55,7 +55,8 @@ class PrimePicksController extends Controller
     public function quantityAdd($item_name, $item_quantity)
     {
         $item_quantity = (int) $item_quantity;
-        $userCart = PrimePicksUserCart::where('item_name', $item_name)->first();
+        $username = session('username');
+        $userCart = PrimePicksUserCart::where('username', $username)->where('item_name', $item_name)->first();
         if ($userCart) {
             $userCart->item_quantity = max(0, $item_quantity + 1);
             if ($userCart->save()) {
@@ -69,7 +70,8 @@ class PrimePicksController extends Controller
     public function quantityMinus($item_name, $item_quantity)
     {
         $item_quantity = (int) $item_quantity;
-        $userCart = PrimePicksUserCart::where('item_name', $item_name)->first();
+        $username = session('username');
+        $userCart = PrimePicksUserCart::where('username', $username)->where('item_name', $item_name)->first();
         if ($userCart) {
             $userCart->item_quantity = max(0, $item_quantity - 1);
             if ($userCart->save()) {
@@ -91,7 +93,8 @@ class PrimePicksController extends Controller
         session()->forget('success');
         $phone = $r->input('phone');
         $address = $r->input('address');
-        $cartItems = PrimePicksUserCart::all();
+        $username = session('username');
+        $cartItems = PrimePicksUserCart::where('username', $username)->get();
         $adminRecords = [];
         if ($cartItems->isEmpty()) {
             session()->flash('fail', 'Your Cart is Empty! Go back and add items to your cart');
@@ -116,7 +119,8 @@ class PrimePicksController extends Controller
 
     public function remove($item_name)
     {
-        $userCart = PrimePicksUserCart::where('item_name', $item_name)->first();
+        $username = session('username');
+        $userCart = PrimePicksUserCart::where('username', $username)->where('item_name', $item_name)->first();
         if ($userCart) {
             if ($userCart->delete()) {
                 $cartRecord = PrimePicksUserCart::all();

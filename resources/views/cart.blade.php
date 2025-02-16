@@ -215,7 +215,7 @@
     <!-- Cart Page -->
     <div class="container mt-5">
         <!-- Back Button -->
-        <a href="{{ url()->previous() }}" class="back-btn text-decoration-none"><i class="fas fa-arrow-left"></i> Back</a>
+        <a href="/" class="back-btn text-decoration-none"><i class="fas fa-arrow-left"></i> Back</a>
 
         <h1 class="text-center my-4" style="color: #6a0dad;">CART ITEMS</h1>
 
