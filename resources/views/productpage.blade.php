@@ -351,7 +351,12 @@
         <div class="container mb-4">
             <input type="text" id="searchBar" class="form-control" placeholder="Search for products..." />
         </div>
-
+        @if ($data->isEmpty())
+            <div class="alert alert-success text-center">
+                No products available. <br> Please <a href="/admin/dashboard" class="text-decoration-none">add products</a>
+                from the admin page.
+            </div>
+        @else
         <div class="row">
             @foreach ($data as $item)
                 <div class="col-md-4 p-2">
@@ -369,6 +374,7 @@
                 </div>
             @endforeach
         </div>
+        @endif
     </section>
 
 

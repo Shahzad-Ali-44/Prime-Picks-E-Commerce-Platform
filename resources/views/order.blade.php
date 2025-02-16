@@ -183,6 +183,12 @@
                         {{ session('success') }}
                     </div>
                 @endif
+                
+                @if (session('fail'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('fail') }}
+                    </div>
+                @endif
 
                 @csrf
                 <h2>Place Order Here - {{ session('username') }}</h2>

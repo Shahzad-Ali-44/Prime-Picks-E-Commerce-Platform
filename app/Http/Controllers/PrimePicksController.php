@@ -88,10 +88,15 @@ class PrimePicksController extends Controller
 
     public function orderDone(Request $r)
     {
+        session()->forget('success');
         $phone = $r->input('phone');
         $address = $r->input('address');
         $cartItems = PrimePicksUserCart::all();
         $adminRecords = [];
+        if ($cartItems->isEmpty()) {
+            session()->flash('fail', 'Your Cart is Empty! Go back and add items to your cart');
+            return view('order');
+        }else{
         foreach ($cartItems as $cartItem) {
             $adminRecords[] = [
                 'username' => $cartItem->username,
@@ -106,7 +111,7 @@ class PrimePicksController extends Controller
         PrimePicks::insert($adminRecords);
         PrimePicksUserCart::truncate();
         session()->flash('success', 'Order processed successfully!');
-        return view('order');
+        return view('order');}
     }
 
     public function remove($item_name)
@@ -297,16 +302,23 @@ class PrimePicksController extends Controller
 
 
     public function index()
-    {
-        $PrimePicksDashboard = PrimePicksDashboard::all();
-        if ($PrimePicksDashboard) {
-            return view('welcome', ['data' => $PrimePicksDashboard]);
-        }
+{
+    $PrimePicksDashboard = PrimePicksDashboard::all();
+
+    if ($PrimePicksDashboard->isEmpty()) {
+        return view('welcome', ['data' => collect()]);
+    } else {
+        return view('welcome', ['data' => $PrimePicksDashboard]);
     }
+}
+
     public function productpage()
     {
         $PrimePicksDashboard = PrimePicksDashboard::all();
-        if ($PrimePicksDashboard) {
+
+        if ($PrimePicksDashboard->isEmpty()) {
+            return view('productpage', ['data' => collect()]);
+        } else {
             return view('productpage', ['data' => $PrimePicksDashboard]);
         }
     }

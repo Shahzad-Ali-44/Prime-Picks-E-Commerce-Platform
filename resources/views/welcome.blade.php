@@ -378,23 +378,30 @@
     <!-- Product Section -->
     <section class="container mt-5 mb-5" id="products">
         <h2 class="text-center my-5">Our <span style="color: #6a0dad;">Products</span></h2>
-        <div class="row mb-5">
-            @foreach ($data->take(6) as $item)
-                <div class="col-md-4 p-2">
-                    <div class="card product-card">
-                        <img src="{{ asset('storage/uploads/' . $item->item_pic) }}" alt="{{ $item->item_pic }}">
-                        <div class="card-body">
-                            <h4>{{ $item->item_name }}</h4>
+        @if ($data->isEmpty())
+            <div class="alert alert-success text-center">
+                No products available. <br> Please <a href="/admin/dashboard" class="text-decoration-none">add products</a>
+                from the admin page.
+            </div>
+        @else
+            <div class="row mb-5">
+                @foreach ($data->take(6) as $item)
+                    <div class="col-md-4 p-2">
+                        <div class="card product-card">
+                            <img src="{{ asset('storage/uploads/' . $item->item_pic) }}" alt="{{ $item->item_pic }}">
+                            <div class="card-body">
+                                <h4>{{ $item->item_name }}</h4>
+                            </div>
+                            <p class="text-muted">{{ $item->item_price }} Rs/-</p>
+                            <button class="btn btn-primary w-100 addToCart" data-name="{{ $item->item_name }}"
+                                data-price="{{ $item->item_price }}">
+                                Add to Cart
+                            </button>
                         </div>
-                        <p class="text-muted">{{ $item->item_price }} Rs/-</p>
-                        <button class="btn btn-primary w-100 addToCart" data-name="{{ $item->item_name }}"
-                            data-price="{{ $item->item_price }}">
-                            Add to Cart
-                        </button>
                     </div>
-                </div>
-            @endforeach
-        </div>
+                @endforeach
+            </div>
+        @endif
         <a href="/productpage" class="allproducts-btn text-decoration-none">All Products <i
                 class="fas fa-arrow-right"></i></a>
 
@@ -452,7 +459,7 @@
         // Logout Function
         function logoutUser() {
             $.ajax({
-                url: "/logout",  
+                url: "/logout",
                 method: "POST",
                 data: {
                     _token: $('meta[name="csrf-token"]').attr("content"),
@@ -476,8 +483,8 @@
                             <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"></button>
                         </div>
                     </div>`;
-            $("#toastContainer").html(toastHtml); 
-            setTimeout(function () { $(".toast").remove(); }, 3000); 
+            $("#toastContainer").html(toastHtml);
+            setTimeout(function () { $(".toast").remove(); }, 3000);
         }
 
 
@@ -492,24 +499,24 @@
                 }
             });
 
-            var isLoggedIn = @json(session('isLoggedIn')); 
+            var isLoggedIn = @json(session('isLoggedIn'));
 
             // Cart click handler
             $(".nav-link[href='/cart']").click(function (e) {
-                e.preventDefault(); 
+                e.preventDefault();
                 if (!isLoggedIn) {
                     showToast("You are not logged in!", "danger");
                 } else {
-                    window.location.href = "/cart"; 
+                    window.location.href = "/cart";
                 }
             });
-            
+
 
             // ADD TO CART 
             $(".addToCart").click(function () {
                 if (!isLoggedIn) {
                     showToast("You must be logged in to add items to the cart!", "danger");
-                    return; 
+                    return;
                 }
 
                 var itemName = $(this).data("name");
@@ -581,7 +588,7 @@
                 spaceBetween: 20,
                 autoplay: {
                     delay: 3000, //
-                    disableOnInteraction: false, 
+                    disableOnInteraction: false,
                 },
                 navigation: {
                     nextEl: '.swiper-button-next',
@@ -606,4 +613,5 @@
         });
     </script>
 </body>
+
 </html>
