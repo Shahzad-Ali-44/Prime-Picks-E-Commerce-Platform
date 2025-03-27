@@ -97,7 +97,7 @@ class PrimePicksController extends Controller
         $cartItems = PrimePicksUserCart::where('username', $username)->get();
         $adminRecords = [];
         if ($cartItems->isEmpty()) {
-            session()->flash('fail', 'Your Cart is Empty! Go back and add items to your cart');
+            session()->flash('fail', 'Your Cart is Empty! Go back and add items to your cart.');
             return view('order');
         }else{
         foreach ($cartItems as $cartItem) {

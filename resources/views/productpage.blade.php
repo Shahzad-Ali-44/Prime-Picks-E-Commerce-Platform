@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+      <!-- SEO Meta Tags -->
+      <meta name="description" content="Prime Picks offers the best online shopping experience with a wide range of products, customer reviews, and seamless checkout. Explore now!">
+    <meta name="keywords" content="online shopping, best deals, buy online, e-commerce, Prime Picks, shopping cart">
+    <meta name="author" content="Prime Picks Team">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
     <title>Prime Picks - All Products</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -381,8 +387,9 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 <a href="/">Prime Picks</a> | All Rights Reserved.</p>
-    </footer>
+    <p>&copy;  <script>document.write(new Date().getFullYear());</script>  <a href="/">Prime Picks</a> | All Rights Reserved | Developed by <a
+          href="https://www.linkedin.com/in/shahzad-ali-8817632ab/" class="text-decoration-underline" target="_blank"
+          rel="noopener noreferrer">Shahzad Ali</a>   </p>    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

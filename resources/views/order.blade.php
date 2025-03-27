@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Customer Order</title>
+      <!-- SEO Meta Tags -->
+      <meta name="description" content="Prime Picks offers the best online shopping experience with a wide range of products, customer reviews, and seamless checkout. Explore now!">
+    <meta name="keywords" content="online shopping, best deals, buy online, e-commerce, Prime Picks, shopping cart">
+    <meta name="author" content="Prime Picks Team">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <title>Prime Picks - Customer Order</title>
     <style>
         /* Custom Purple Theme */
         :root {
@@ -165,7 +171,7 @@
             <a href="/" class="navbar-brand logo"><i class="fa fa-shopping-cart"></i> Prime Picks</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a href="/cart" class="nav-link">My Cart <i class="fas fa-shopping-cart"></i></a></li>
+                    <li class="nav-item"><a href="/process_order" class="nav-link">Order Place <i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -174,19 +180,19 @@
     <!-- Order Page -->
     <div class="container my-5 vh-100">
         <!-- Back Button -->
-        <a href="/" class="back-btn text-decoration-none"><i class="fas fa-arrow-left"></i> Back</a>
+        <a href="/cart" class="back-btn text-decoration-none"><i class="fas fa-arrow-left"></i> Back</a>
         <!-- Order Form Section -->
         <div class="body1 mt-3">
             <form action="/orderDone" class="form" method="POST">
                 @if (session('success'))
                     <div class="alert alert-success" role="alert">
-                        {{ session('success') }}
+                        {{ session('success') }} <a style="color: black;" href="/"><b>Back to home page.</b></a>
                     </div>
                 @endif
                 
                 @if (session('fail'))
                     <div class="alert alert-danger" role="alert">
-                        {{ session('fail') }}
+                        {{ session('fail') }} <a style="color: black;" href="/"><b>Back to home page.</b></a>
                     </div>
                 @endif
 
@@ -208,8 +214,9 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 <a href="/">Prime Picks</a> | All Rights Reserved.</p>
-    </footer>
+    <p>&copy;  <script>document.write(new Date().getFullYear());</script>  <a href="/">Prime Picks</a> | All Rights Reserved | Developed by <a
+          href="https://www.linkedin.com/in/shahzad-ali-8817632ab/" class="text-decoration-underline" target="_blank"
+          rel="noopener noreferrer">Shahzad Ali</a>   </p>     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

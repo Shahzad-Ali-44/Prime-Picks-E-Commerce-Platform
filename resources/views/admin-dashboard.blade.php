@@ -208,8 +208,24 @@
             transition: background-color 0.3s ease;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
             border: none;
-            font-size: 15px;
+            font-size: 12px;
         }
+
+        /* Smaller devices */
+        @media (max-width: 1200px) {
+            .product-actions a {
+                font-size: 9px;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .product-actions a {
+                font-size: 10px;
+            }
+        }
+
+       
 
         .product-actions a:hover {
             background-color: var(--secondary-color);
@@ -249,7 +265,7 @@
         }
 
         .modal-footer .btn-danger:hover {
-            background-color:var(--secondary-color) !important;
+            background-color: var(--secondary-color) !important;
             color: white !important;
         }
     </style>
@@ -284,9 +300,9 @@
     <!-- Order Details Section -->
     <section>
         <div class="container my-5">
-        @if (session('productdeleted') == 'true')
-            <div class="alert alert-success" role="alert">The product has been deleted successfully.</div>
-        @endif
+            @if (session('productdeleted') == 'true')
+                <div class="alert alert-success" role="alert">The product has been deleted successfully.</div>
+            @endif
             <h2>Order Details Of Customer</h2>
             <div class="table-responsive">
                 <table>
@@ -372,7 +388,10 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 <a href="">Prime Picks</a> | All Rights Reserved.</p>
+    <p>&copy;  <script>document.write(new Date().getFullYear());</script>  <a href="/">Prime Picks</a> | All Rights Reserved | Developed by <a
+          href="https://www.linkedin.com/in/shahzad-ali-8817632ab/" class="text-decoration-underline" target="_blank"
+          rel="noopener noreferrer">Shahzad Ali</a>   </p> 
+     
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -381,7 +400,7 @@
         // Function to open the modal 
         function openDeleteModal(productId) {
             productIdToDelete = productId;
-            $('#deleteModal').modal('show'); 
+            $('#deleteModal').modal('show');
         }
 
         // Function to perform the deletion
@@ -392,4 +411,5 @@
         });
     </script>
 </body>
+
 </html>
