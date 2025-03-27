@@ -125,6 +125,11 @@
                 {{ session('fail') }}
             </div>
         @endif
+         @if (session('logout'))
+            <div class="alert alert-info h5 text-center" role="alert">
+                {{ session('logout') }}
+            </div>
+        @endif
 
         <h2>Admin Login</h2>
 

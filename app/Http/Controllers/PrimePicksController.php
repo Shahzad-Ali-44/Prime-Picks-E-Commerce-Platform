@@ -166,7 +166,7 @@ class PrimePicksController extends Controller
     public function admin_logout(Request $r)
     {
         session()->forget('admin');
-        return redirect('/admin')->with('fail', 'You have logged out successfully.');
+        return redirect('/admin')->with('logout', 'You have logged out successfully.');
     }
 
     public function productAdded(Request $request)
